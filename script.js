@@ -2,7 +2,7 @@ const container = document.getElementById("container");
 
 function makeGrid(num){
     if(num >= 100){
-        alert("ERROR");
+        alert("Please Enter a Number less than 100!");
         return;
     }
     else{
@@ -22,7 +22,7 @@ function makeGrid(num){
 
 const button = document.querySelector("#btn");
 button.addEventListener("click",() => {
-    let number = prompt("Please enter number of square per side");
+    let number = prompt("Please enter number of square per side (Max 100)");
     container.replaceChildren();
     makeGrid(number);
 });
