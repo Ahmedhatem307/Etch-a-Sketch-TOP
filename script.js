@@ -1,19 +1,29 @@
 const container = document.getElementById("container");
 
-function makeGrid(){
-    for(let i = 0; i <16; i++){
-        const col = document.createElement("div");
-        col.classList.add("col");
+function makeGrid(num){
+    if(num >= 100){
+        alert("ERROR");
+        return;
+    }
+    else{
         
-        container.appendChild(col);
-        for(let j = 0; j < 16; j++){
-            const row = document.createElement("div");
-            row.classList.add("row");
-            row.textContent = i+1;
-            col.appendChild(row);
+        for(let i = 0; i <num; i++){
+            const col = document.createElement("div");
+            col.classList.add("col");
+            container.appendChild(col);
+            for(let j = 0; j < num; j++){
+                const row = document.createElement("div");
+                row.classList.add("row");
+                col.appendChild(row);
+            }
         }
-        
     }
 }
 
-makeGrid();
+const button = document.querySelector("#btn");
+button.addEventListener("click",() => {
+    let number = prompt("Please enter number of square per side");
+    container.replaceChildren();
+    makeGrid(number);
+});
+
