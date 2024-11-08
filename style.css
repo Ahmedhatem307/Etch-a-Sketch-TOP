@@ -32,9 +32,7 @@ body{
 .row{
     flex: 1;
 }
-.row:hover{
-    background-color: red;
-}
+
 
 #footer{
     margin-top: auto;
